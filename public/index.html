@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .square {
+        width: 10px;
+        height: 10px;
+        top: 0;
+        right: 0;
+        background-color: black;
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      const userId = Math.floor(Math.random() * Math.floor(100000000));
+
+      window.addEventListener("mousemove", (e) => {
+        socket.emit("cursorPosition", {
+          userId: userId,
+          x: e.clientX,
+          y: e.clientY,
+        });
+      });
+
+      var socket = io();
+
+      socket.on("cursorPosition", function (position) {
+        let square = document.getElementById(position.userId);
+        if (!square) {
+          square = document.createElement("div");
+          square.id = position.userId;
+          square.classList.add("square");
+          square.style.top = `${position.y}px`;
+          square.style.left = `${position.x}px`;
+          document.querySelector("body").appendChild(square);
+        } else {
+          square.style.top = `${position.y}px`;
+          square.style.left = `${position.x}px`;
+        }
+        console.log(position.x, position.y);
+      });
+    </script>
+  </body>
+</html>
