@@ -43,7 +43,6 @@ export class SquaresBoardComponent implements OnInit {
         square.style.top = `${position.y}px`;
         square.style.left = `${position.x}px`;
       }
-      console.log(position.x, position.y);
     });      
   }
 }
