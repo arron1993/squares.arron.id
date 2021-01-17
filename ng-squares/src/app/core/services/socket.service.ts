@@ -9,7 +9,7 @@ export class SocketService {
   
 
   constructor() { 
-    this.socket = io("localhost:3000");
+    this.socket = io({ 'path': '/socket.io' });
   }
 
   emit(event, data?) {

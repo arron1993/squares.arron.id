@@ -1,7 +1,12 @@
 version: "2.0"
 services:
-  squares.arron.id:
+  js-server:
     build:
-      context: .
+      context: js-server/.
     ports:
-      - "5000:3000"
+      - "3000:3000"
+  ng-squares:
+    build:
+      context: ng-squares/.
+    ports:
+      - "80:80"
