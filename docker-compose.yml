@@ -3,8 +3,6 @@ services:
   js-server:
     build:
       context: js-server/.
-    ports:
-      - "3000:3000"
   ng-squares:
     build:
       context: ng-squares/.
