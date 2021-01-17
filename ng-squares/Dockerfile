@@ -19,6 +19,5 @@ COPY ./tsconfig.json /ng-squares
 
 FROM nginx:latest
 
-COPY nginx.conf /etc/nginx  
 COPY --from=angular_build /ng-squares/dist /usr/share/nginx/html
 

@@ -8,3 +8,5 @@ services:
       context: ng-squares/.
     ports:
       - "8000:80"
+    volumes:
+      - ./ng-squares/nginx/:/etc/nginx/conf.d/
