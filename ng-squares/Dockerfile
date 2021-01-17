@@ -11,10 +11,11 @@ RUN npm install
 RUN npx ngcc
 
 COPY ./src /ng-squares/src
+COPY ./dist /ng-squares/dist
 COPY ./angular.json /ng-squares
 COPY ./tsconfig.app.json /ng-squares
 COPY ./tsconfig.json /ng-squares
-RUN npm run build-prod
+# RUN npm run build-prod
 
 FROM nginx:latest
 
