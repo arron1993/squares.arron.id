@@ -9,4 +9,4 @@ services:
     build:
       context: ng-squares/.
     ports:
-      - "80:80"
+      - "8000:80"
