@@ -14,7 +14,7 @@ COPY ./src /ng-squares/src
 COPY ./angular.json /ng-squares
 COPY ./tsconfig.app.json /ng-squares
 COPY ./tsconfig.json /ng-squares
-RUN ng build-prod
+RUN npm run build-prod
 
 FROM nginx:latest
 
